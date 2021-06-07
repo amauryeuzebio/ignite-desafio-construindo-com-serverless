@@ -5,7 +5,9 @@
   "main": "serverless.ts",
   "scripts": {
     "dev": "serverless offline",
-    "deploy": "serverless deploy -v"
+    "deploy": "serverless deploy -v",
+    "dynamo:install": "serverless dynamodb install",
+    "dynamo:start": "serverless dynamodb start"
   },
   "dependencies": {
     "@middy/core": "^1.5.2",
@@ -18,6 +20,7 @@
     "@types/node": "^14.14.25",
     "json-schema-to-ts": "^1.5.0",
     "serverless": "^2.23.0",
+    "serverless-dynamodb-local": "^0.2.39",
     "serverless-offline": "^7.0.0",
     "serverless-webpack": "^5.3.5",
     "ts-loader": "^8.0.15",
