@@ -1,0 +1,32 @@
+service:
+  name: todo-list
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+functions:
+  createTodo:
+    handler: src/functions/createTodo.handle
+    events:
+      - http:
+          path: /todos/{userid}
+          method: POST
+          cors: true
+  listTodos:
+    handler: src/functions/listTodos.handle
+    events:
+      - http:
+          path: /todos/{userid}
+          method: GET
+          cors: true
