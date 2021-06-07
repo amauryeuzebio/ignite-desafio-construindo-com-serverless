@@ -29,14 +29,14 @@ functions:
     handler: src/functions/createTodo.handle
     events:
       - http:
-          path: /todos/{userid}
+          path: /todos/{user_id}
           method: POST
           cors: true
   listTodos:
     handler: src/functions/listTodos.handle
     events:
       - http:
-          path: /todos/{userid}
+          path: /todos/{user_id}
           method: GET
           cors: true
 
